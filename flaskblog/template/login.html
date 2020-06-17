@@ -12,7 +12,7 @@
                     <div class="invalid-feedback">
                         {% for error in form.email.errors %}
                             <span>{{ error }}</span>
-                        {% endfor %}
+                        {% endfor %}from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
                     </div>
                 {% else %}
                     {{ form.email(class="form-control form-control-lg") }}
@@ -40,7 +40,7 @@
             {{ form.submit(class="btn btn-outline-info") }}
         </div>
         <small class="text-muted">
-            <a href="#">Forget password</a>
+            <a href="{{ url_for('reset_request') }}">Forget password</a>
         </small>
     </form>
 </div>
